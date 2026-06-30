@@ -681,11 +681,45 @@
     }
 
     .project-tabs {
-      display: none
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 36px
     }
 
     .ptab {
-      display: none
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--fm);
+      font-size: 12px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      background: var(--white-faint);
+      border: 1px solid var(--border-soft);
+      padding: 9px 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all .25s ease;
+      white-space: nowrap
+    }
+
+    .ptab:hover {
+      color: var(--white);
+      border-color: var(--border)
+    }
+
+    .ptab.active {
+      color: var(--navy);
+      background: var(--electric);
+      border-color: var(--electric);
+      box-shadow: 0 0 24px rgba(0, 212, 255, .35)
+    }
+
+    .ptab .ptab-count {
+      font-size: 10px;
+      opacity: .65
     }
 
     .gh-link {
@@ -1226,227 +1260,248 @@
       <h2 class="section-title">Work that <span class="accent">speaks.</span></h2>
     </div>
 
-    <!-- ── ANALYSIS ───────────────────────── -->
-    <div class="cat-block reveal">
-      <div class="cat-label-row">
-        <span class="cat-line cat-line-analysis"></span>
-        <span class="cat-label cat-label-analysis">📊 Data Analysis</span>
-        <span class="cat-line cat-line-analysis cat-line-grow"></span>
-      </div>
-      <div class="projects-grid">
-
-        <div class="project-card visible">
-          <div class="card-glow featured-glow"></div>
-          <div class="card-body">
-            <div class="project-rank">#1 Ranked</div>
-            <div class="project-cat-badge badge-analysis">📊 Analysis</div>
-            <div class="project-title">Olist E-Commerce Marketplace Analytics</div>
-            <div class="project-desc">Full business analysis of 96K+ customers — RFM segmentation, cohort retention,
-              Pareto, and root cause analysis across 6 relational tables.</div>
-            <div class="project-insight"><strong>Key insight:</strong> 97% of 96,096 customers purchased exactly once.
-              Delivery delays >20 days collapse ratings from 4.1 → 3.12. Recommended post-purchase sequence targeting M1
-              retention lift 0.7% → 3%.</div>
-          </div>
-          <div class="card-footer">
-            <span class="tech-tag">PostgreSQL</span><span class="tech-tag">Cohort</span><span
-              class="tech-tag">RFM</span><span class="tech-tag">Python</span><span class="tech-tag">SciPy</span>
-            <a href="https://github.com/A-NarenKarthikeyan/End-to-End-E-Commerce-revenue-analysis.git" target="_blank"
-              rel="noopener" class="gh-link">View on GitHub ↗</a>
-          </div>
-        </div>
-
-        <div class="project-card visible">
-          <div class="card-glow analysis-glow"></div>
-          <div class="card-body">
-            <div class="project-rank">#2 Ranked</div>
-            <div class="project-cat-badge badge-analysis">📊 Analysis</div>
-            <div class="project-title">Online Retail II — Transactions to Strategy</div>
-            <div class="project-desc">Statistical deep-dive on 250K+ transactions using Gini coefficient, Lorenz curve,
-              VIF multicollinearity tests, and Welch's t-test for customer value segmentation.</div>
-            <div class="project-insight"><strong>Key insight:</strong> Gini = 0.80 — top 10% customers drive 60.12%
-              revenue. Revenue is customer-concentrated, not product-concentrated. VIF multicollinearity identified →
-              regression intentionally abandoned.</div>
-          </div>
-          <div class="card-footer">
-            <span class="tech-tag">Python</span><span class="tech-tag">Gini / Lorenz</span><span
-              class="tech-tag">Welch's t-test</span><span class="tech-tag">Statsmodels</span>
-            <a href="https://github.com/A-NarenKarthikeyan/Business-Transactions-analysis.git" target="_blank"
-              rel="noopener" class="gh-link">View on GitHub ↗</a>
-          </div>
-        </div>
-
-        <div class="project-card visible">
-          <div class="card-glow analysis-glow"></div>
-          <div class="card-body">
-            <div class="project-rank">#3 Ranked</div>
-            <div class="project-cat-badge badge-analysis">📊 Analysis</div>
-            <div class="project-title">E-Commerce Sales Intelligence Dashboard</div>
-            <div class="project-desc">Power BI star schema dashboard with 20+ advanced DAX measures answering 6
-              stakeholder business questions across revenue, margins, and shipping performance.</div>
-            <div class="project-insight"><strong>Key insight:</strong> COD customers carry the highest AOV —
-              counterintuitive finding. Electronics = 82% revenue, 15.7% margin. Recommended 20% budget reallocation →
-              projected 18% margin improvement.</div>
-          </div>
-          <div class="card-footer">
-            <span class="tech-tag">Power BI</span><span class="tech-tag">DAX</span><span class="tech-tag">Star
-              Schema</span><span class="tech-tag">Power Query</span>
-            <a href="https://github.com/A-NarenKarthikeyan/sales.git" target="_blank" rel="noopener"
-              class="gh-link">View on GitHub ↗</a>
-          </div>
-        </div>
-
-        <div class="project-card visible">
-          <div class="card-glow analysis-glow"></div>
-          <div class="card-body">
-            <div class="project-cat-badge badge-analysis">📊 Analysis</div>
-            <div class="project-title">Customer Funnel & Conversion Analysis</div>
-            <div class="project-desc">End-to-end funnel analysis on 4,000+ user events with chi-square statistical
-              validation on all channel conversion findings.</div>
-            <div class="project-insight"><strong>Key insight:</strong> Email 33.9% vs Social 6.9% — 4.9× gap (χ²=124.3,
-              p&lt;0.001). January $78K spike = campaign effect, not seasonality. Recommended 30% Social → Email
-              reallocation.</div>
-          </div>
-          <div class="card-footer">
-            <span class="tech-tag">PostgreSQL</span><span class="tech-tag">Python</span><span
-              class="tech-tag">SciPy</span><span class="tech-tag">Chi-Square</span>
-            <a href="https://github.com/A-NarenKarthikeyan/E-Commerce-Customer-Behavior-Revenue-Analysis"
-              target="_blank" rel="noopener" class="gh-link">View on GitHub ↗</a>
-          </div>
-        </div>
-
-        <div class="project-card visible">
-          <div class="card-glow analysis-glow"></div>
-          <div class="card-body">
-            <div class="project-cat-badge badge-analysis">📊 Analysis</div>
-            <div class="project-title">Customer Shopping Behavior Analytics</div>
-            <div class="project-desc">Full-cycle retail analytics: Python cleaning → PostgreSQL analysis → Power BI
-              dashboard → Gamma stakeholder presentation.</div>
-            <div class="project-insight"><strong>Coverage:</strong> 3,900+ transactions, 6 SQL business queries on
-              revenue, discount impact, and customer segmentation. Full analyst workflow end-to-end.</div>
-          </div>
-          <div class="card-footer">
-            <span class="tech-tag">Python</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">Power
-              BI</span><span class="tech-tag">Gamma</span>
-            <a href="https://github.com/A-NarenKarthikeyan/customer_behaviour_analysis" target="_blank" rel="noopener"
-              class="gh-link">View on GitHub ↗</a>
-          </div>
-        </div>
-
-        <div class="project-card visible">
-          <div class="card-glow analysis-glow"></div>
-          <div class="card-body">
-            <div class="project-cat-badge badge-analysis">📊 Analysis</div>
-            <div class="project-title">Superstore Sales — Excel</div>
-            <div class="project-desc">End-to-end Excel project with 7-sheet structured workbook, dedicated data quality
-              audit sheet, and dark executive dashboard.</div>
-            <div class="project-insight"><strong>Key finding:</strong> Furniture = –45.9% margin loss centre. October =
-              peak month across all 4 years. Data Quality Report sheet demonstrates data governance mindset.</div>
-          </div>
-          <div class="card-footer">
-            <span class="tech-tag">Excel</span><span class="tech-tag">Pivot Tables</span><span
-              class="tech-tag">SUMPRODUCT</span><span class="tech-tag">Dashboard</span>
-            <a href="https://github.com/A-NarenKarthikeyan/Super-Store-analysis---Excel.git" target="_blank"
-              rel="noopener" class="gh-link">View on GitHub ↗</a>
-          </div>
-        </div>
-
-      </div>
+    <div class="project-tabs reveal">
+      <button class="ptab active" data-filter="all" onclick="filterProjects('all', this)">All <span
+          class="ptab-count">(12)</span></button>
+      <button class="ptab" data-filter="analysis" onclick="filterProjects('analysis', this)">📊 Data Analysis <span
+          class="ptab-count">(8)</span></button>
+      <button class="ptab" data-filter="engineering" onclick="filterProjects('engineering', this)">⚙️ Data
+        Engineering <span class="ptab-count">(2)</span></button>
+      <button class="ptab" data-filter="ai" onclick="filterProjects('ai', this)">🤖 AI & ML <span
+          class="ptab-count">(2)</span></button>
     </div>
 
-    <!-- ── DATA ENGINEERING ───────────────── -->
-    <div class="cat-block reveal">
-      <div class="cat-label-row">
-        <span class="cat-line cat-line-engineering"></span>
-        <span class="cat-label cat-label-engineering">⚙️ Data Engineering</span>
-        <span class="cat-line cat-line-engineering cat-line-grow"></span>
-      </div>
-      <div class="projects-grid">
+    <div class="projects-grid">
 
-        <div class="project-card visible">
-          <div class="card-glow engineering-glow"></div>
-          <div class="card-body">
-            <div class="project-cat-badge badge-engineering">⚙️ Engineering</div>
-            <div class="project-title">Crypto ETL Pipeline — Databricks</div>
-            <div class="project-desc">Production-style cloud ETL pulling live crypto data hourly, storing incrementally
-              in Neon PostgreSQL, visualised in Power BI.</div>
-            <div class="project-insight"><strong>Architecture:</strong> CoinGecko API → Databricks Jobs (hourly) →
-              PostgreSQL UPSERT → Power BI. Incremental load, idempotent runs, no Airflow dependency.</div>
-          </div>
-          <div class="card-footer">
-            <span class="tech-tag">Databricks</span><span class="tech-tag">Python</span><span class="tech-tag">Neon
-              PostgreSQL</span><span class="tech-tag">Power BI</span>
-            <a href="https://github.com/A-NarenKarthikeyan/Crypto-ETL-Pipeline" target="_blank" rel="noopener"
-              class="gh-link">View on GitHub ↗</a>
-          </div>
+      <div class="project-card visible" data-cat="analysis">
+        <div class="card-glow featured-glow"></div>
+        <div class="card-body">
+          <div class="project-rank">#1 Ranked</div>
+          <div class="project-cat-badge badge-analysis">📊 Analysis</div>
+          <div class="project-title">OLA Electric — Voice of Customer Analysis</div>
+          <div class="project-desc">End-to-end VoC pipeline on 7,119 Play Store reviews — sentiment analysis,
+            multi-label complaint classification, and statistical EDA exposing OLA's customer experience crisis.</div>
+          <div class="project-insight"><strong>Key insight:</strong> Service & quality complaints dominate negative
+            sentiment, with statistically significant rating gaps across complaint categories. Live Streamlit
+            dashboard rebuilt in OLA's own brand colours for stakeholder framing.</div>
         </div>
-
-        <div class="project-card visible">
-          <div class="card-glow engineering-glow"></div>
-          <div class="card-body">
-            <div class="project-cat-badge badge-engineering">⚙️ Engineering</div>
-            <div class="project-title">Sales Data Warehouse — Medallion</div>
-            <div class="project-desc">PostgreSQL data warehouse consolidating ERP + CRM data using Bronze → Silver →
-              Gold medallion architecture.</div>
-            <div class="project-insight"><strong>Design:</strong> Bronze = raw CSVs · Silver = cleaned & deduplicated ·
-              Gold = business-ready views. Separation of storage and consumption layers.</div>
-          </div>
-          <div class="card-footer">
-            <span class="tech-tag">PostgreSQL</span><span class="tech-tag">Medallion</span><span class="tech-tag">ERP +
-              CRM</span><span class="tech-tag">Data Modelling</span>
-            <a href="https://github.com/A-NarenKarthikeyan/Data-WareHouse-PSQl.git" target="_blank" rel="noopener"
-              class="gh-link">View on GitHub ↗</a>
-          </div>
+        <div class="card-footer">
+          <span class="tech-tag">Python</span><span class="tech-tag">NLP / Sentiment</span><span
+            class="tech-tag">Multi-label Classification</span><span class="tech-tag">Streamlit</span><span
+            class="tech-tag">Plotly</span>
+          <a href="https://ola-electric-voc-analysis-km3otwgf7fvgvgve553bjy.streamlit.app" target="_blank"
+            rel="noopener" class="gh-link">Live Dashboard ↗</a>
+          <a href="https://github.com/A-NarenKarthikeyan/ola-electric-voc-analysis" target="_blank" rel="noopener"
+            class="gh-link">View on GitHub ↗</a>
         </div>
-
       </div>
-    </div>
 
-    <!-- ── AI & ML ────────────────────────── -->
-    <div class="cat-block reveal">
-      <div class="cat-label-row">
-        <span class="cat-line cat-line-ai"></span>
-        <span class="cat-label cat-label-ai">🤖 AI & ML</span>
-        <span class="cat-line cat-line-ai cat-line-grow"></span>
-      </div>
-      <div class="projects-grid">
-
-        <div class="project-card visible">
-          <div class="card-glow ai-glow"></div>
-          <div class="card-body">
-            <div class="project-cat-badge badge-ai">🤖 AI & ML</div>
-            <div class="project-title">HR Attrition Intelligence System</div>
-            <div class="project-desc">Predictive attrition system with XGBoost + SHAP — explaining each prediction to
-              non-technical HR stakeholders.</div>
-            <div class="project-insight"><strong>Depth:</strong> Threshold tuning for precision-recall tradeoff. SHAP
-              values per prediction. 4-page Streamlit dashboard. Explainability-first design.</div>
-          </div>
-          <div class="card-footer">
-            <span class="tech-tag">XGBoost</span><span class="tech-tag">SHAP</span><span
-              class="tech-tag">Streamlit</span><span class="tech-tag">Scikit-learn</span>
-            <a href="https://github.com/A-NarenKarthikeyan/HR-Attrition-Intelligence-System.git" target="_blank"
-              rel="noopener" class="gh-link">View on GitHub ↗</a>
-          </div>
+      <div class="project-card visible" data-cat="analysis">
+        <div class="card-glow analysis-glow"></div>
+        <div class="card-body">
+          <div class="project-rank">#2 Ranked</div>
+          <div class="project-cat-badge badge-analysis">📊 Analysis</div>
+          <div class="project-title">DataCo Supply Chain Delay Analysis</div>
+          <div class="project-desc">Logistics performance analysis on the DataCo supply chain dataset — ANOVA,
+            Chi-Square, and Kruskal-Wallis tests isolating the true driver of SLA breaches.</div>
+          <div class="project-insight"><strong>Key insight:</strong> 57.3% global SLA breach rate, driven by
+            misconfigured SLA windows rather than geography or product type — a zero-cost fix backed by statistical
+            evidence.</div>
         </div>
-
-        <div class="project-card visible">
-          <div class="card-glow ai-glow"></div>
-          <div class="card-body">
-            <div class="project-cat-badge badge-ai">🤖 AI & ML</div>
-            <div class="project-title">AI-Powered Data Analytics Platform</div>
-            <div class="project-desc">Copilot-style analytics platform — users query data in plain English via LLM, zero
-              SQL needed.</div>
-            <div class="project-insight"><strong>Stack:</strong> OpenRouter API → LLM generates Python analysis → Plotly
-              charts returned. Full NL2Analysis pipeline differentiating from 95% of analyst portfolios.</div>
-          </div>
-          <div class="card-footer">
-            <span class="tech-tag">Python</span><span class="tech-tag">OpenRouter</span><span
-              class="tech-tag">Streamlit</span><span class="tech-tag">LLM</span><span class="tech-tag">Plotly</span>
-            <a href="https://github.com/A-NarenKarthikeyan/AI_Data_analyst.git" target="_blank" rel="noopener"
-              class="gh-link">View on GitHub ↗</a>
-          </div>
+        <div class="card-footer">
+          <span class="tech-tag">Python</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">ANOVA /
+            Chi-Square</span><span class="tech-tag">Streamlit</span>
+          <a href="https://github.com/A-NarenKarthikeyan/Supply_chain" target="_blank" rel="noopener"
+            class="gh-link">View on GitHub ↗</a>
         </div>
-
       </div>
+
+      <div class="project-card visible" data-cat="analysis">
+        <div class="card-glow analysis-glow"></div>
+        <div class="card-body">
+          <div class="project-rank">#3 Ranked</div>
+          <div class="project-cat-badge badge-analysis">📊 Analysis</div>
+          <div class="project-title">Olist E-Commerce Marketplace Analytics</div>
+          <div class="project-desc">Full business analysis of 96K+ customers — RFM segmentation, cohort retention,
+            Pareto, and root cause analysis across 6 relational tables.</div>
+          <div class="project-insight"><strong>Key insight:</strong> 97% of 96,096 customers purchased exactly once.
+            Delivery delays >20 days collapse ratings from 4.1 → 3.12. Recommended post-purchase sequence targeting
+            M1 retention lift 0.7% → 3%.</div>
+        </div>
+        <div class="card-footer">
+          <span class="tech-tag">PostgreSQL</span><span class="tech-tag">Cohort</span><span
+            class="tech-tag">RFM</span><span class="tech-tag">Python</span><span class="tech-tag">SciPy</span>
+          <a href="https://github.com/A-NarenKarthikeyan/End-to-End-E-Commerce-revenue-analysis.git" target="_blank"
+            rel="noopener" class="gh-link">View on GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="project-card visible" data-cat="analysis">
+        <div class="card-glow analysis-glow"></div>
+        <div class="card-body">
+          <div class="project-rank">#4 Ranked</div>
+          <div class="project-cat-badge badge-analysis">📊 Analysis</div>
+          <div class="project-title">Online Retail II — Transactions to Strategy</div>
+          <div class="project-desc">Statistical deep-dive on 250K+ transactions using Gini coefficient, Lorenz curve,
+            VIF multicollinearity tests, and Welch's t-test for customer value segmentation.</div>
+          <div class="project-insight"><strong>Key insight:</strong> Gini = 0.80 — top 10% customers drive 60.12%
+            revenue. Revenue is customer-concentrated, not product-concentrated. VIF multicollinearity identified →
+            regression intentionally abandoned.</div>
+        </div>
+        <div class="card-footer">
+          <span class="tech-tag">Python</span><span class="tech-tag">Gini / Lorenz</span><span
+            class="tech-tag">Welch's t-test</span><span class="tech-tag">Statsmodels</span>
+          <a href="https://github.com/A-NarenKarthikeyan/Business-Transactions-analysis.git" target="_blank"
+            rel="noopener" class="gh-link">View on GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="project-card visible" data-cat="analysis">
+        <div class="card-glow analysis-glow"></div>
+        <div class="card-body">
+          <div class="project-cat-badge badge-analysis">📊 Analysis</div>
+          <div class="project-title">E-Commerce Sales Intelligence Dashboard</div>
+          <div class="project-desc">Power BI star schema dashboard with 20+ advanced DAX measures answering 6
+            stakeholder business questions across revenue, margins, and shipping performance.</div>
+          <div class="project-insight"><strong>Key insight:</strong> COD customers carry the highest AOV —
+            counterintuitive finding. Electronics = 82% revenue, 15.7% margin. Recommended 20% budget reallocation →
+            projected 18% margin improvement.</div>
+        </div>
+        <div class="card-footer">
+          <span class="tech-tag">Power BI</span><span class="tech-tag">DAX</span><span class="tech-tag">Star
+            Schema</span><span class="tech-tag">Power Query</span>
+          <a href="https://github.com/A-NarenKarthikeyan/sales.git" target="_blank" rel="noopener"
+            class="gh-link">View on GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="project-card visible" data-cat="analysis">
+        <div class="card-glow analysis-glow"></div>
+        <div class="card-body">
+          <div class="project-cat-badge badge-analysis">📊 Analysis</div>
+          <div class="project-title">Customer Funnel & Conversion Analysis</div>
+          <div class="project-desc">End-to-end funnel analysis on 4,000+ user events with chi-square statistical
+            validation on all channel conversion findings.</div>
+          <div class="project-insight"><strong>Key insight:</strong> Email 33.9% vs Social 6.9% — 4.9× gap (χ²=124.3,
+            p&lt;0.001). January $78K spike = campaign effect, not seasonality. Recommended 30% Social → Email
+            reallocation.</div>
+        </div>
+        <div class="card-footer">
+          <span class="tech-tag">PostgreSQL</span><span class="tech-tag">Python</span><span
+            class="tech-tag">SciPy</span><span class="tech-tag">Chi-Square</span>
+          <a href="https://github.com/A-NarenKarthikeyan/E-Commerce-Customer-Behavior-Revenue-Analysis"
+            target="_blank" rel="noopener" class="gh-link">View on GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="project-card visible" data-cat="analysis">
+        <div class="card-glow analysis-glow"></div>
+        <div class="card-body">
+          <div class="project-cat-badge badge-analysis">📊 Analysis</div>
+          <div class="project-title">Customer Shopping Behavior Analytics</div>
+          <div class="project-desc">Full-cycle retail analytics: Python cleaning → PostgreSQL analysis → Power BI
+            dashboard → Gamma stakeholder presentation.</div>
+          <div class="project-insight"><strong>Coverage:</strong> 3,900+ transactions, 6 SQL business queries on
+            revenue, discount impact, and customer segmentation. Full analyst workflow end-to-end.</div>
+        </div>
+        <div class="card-footer">
+          <span class="tech-tag">Python</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">Power
+            BI</span><span class="tech-tag">Gamma</span>
+          <a href="https://github.com/A-NarenKarthikeyan/customer_behaviour_analysis" target="_blank" rel="noopener"
+            class="gh-link">View on GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="project-card visible" data-cat="analysis">
+        <div class="card-glow analysis-glow"></div>
+        <div class="card-body">
+          <div class="project-cat-badge badge-analysis">📊 Analysis</div>
+          <div class="project-title">Superstore Sales — Excel</div>
+          <div class="project-desc">End-to-end Excel project with 7-sheet structured workbook, dedicated data
+            quality audit sheet, and dark executive dashboard.</div>
+          <div class="project-insight"><strong>Key finding:</strong> Furniture = –45.9% margin loss centre. October
+            = peak month across all 4 years. Data Quality Report sheet demonstrates data governance mindset.</div>
+        </div>
+        <div class="card-footer">
+          <span class="tech-tag">Excel</span><span class="tech-tag">Pivot Tables</span><span
+            class="tech-tag">SUMPRODUCT</span><span class="tech-tag">Dashboard</span>
+          <a href="https://github.com/A-NarenKarthikeyan/Super-Store-analysis---Excel.git" target="_blank"
+            rel="noopener" class="gh-link">View on GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="project-card visible" data-cat="engineering">
+        <div class="card-glow engineering-glow"></div>
+        <div class="card-body">
+          <div class="project-cat-badge badge-engineering">⚙️ Engineering</div>
+          <div class="project-title">Crypto ETL Pipeline — Databricks</div>
+          <div class="project-desc">Production-style cloud ETL pulling live crypto data hourly, storing
+            incrementally in Neon PostgreSQL, visualised in Power BI.</div>
+          <div class="project-insight"><strong>Architecture:</strong> CoinGecko API → Databricks Jobs (hourly) →
+            PostgreSQL UPSERT → Power BI. Incremental load, idempotent runs, no Airflow dependency.</div>
+        </div>
+        <div class="card-footer">
+          <span class="tech-tag">Databricks</span><span class="tech-tag">Python</span><span class="tech-tag">Neon
+            PostgreSQL</span><span class="tech-tag">Power BI</span>
+          <a href="https://github.com/A-NarenKarthikeyan/Crypto-ETL-Pipeline" target="_blank" rel="noopener"
+            class="gh-link">View on GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="project-card visible" data-cat="engineering">
+        <div class="card-glow engineering-glow"></div>
+        <div class="card-body">
+          <div class="project-cat-badge badge-engineering">⚙️ Engineering</div>
+          <div class="project-title">Sales Data Warehouse — Medallion</div>
+          <div class="project-desc">PostgreSQL data warehouse consolidating ERP + CRM data using Bronze → Silver →
+            Gold medallion architecture.</div>
+          <div class="project-insight"><strong>Design:</strong> Bronze = raw CSVs · Silver = cleaned & deduplicated ·
+            Gold = business-ready views. Separation of storage and consumption layers.</div>
+        </div>
+        <div class="card-footer">
+          <span class="tech-tag">PostgreSQL</span><span class="tech-tag">Medallion</span><span class="tech-tag">ERP +
+            CRM</span><span class="tech-tag">Data Modelling</span>
+          <a href="https://github.com/A-NarenKarthikeyan/Data-WareHouse-PSQl.git" target="_blank" rel="noopener"
+            class="gh-link">View on GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="project-card visible" data-cat="ai">
+        <div class="card-glow ai-glow"></div>
+        <div class="card-body">
+          <div class="project-cat-badge badge-ai">🤖 AI & ML</div>
+          <div class="project-title">HR Attrition Intelligence System</div>
+          <div class="project-desc">Predictive attrition system with XGBoost + SHAP — explaining each prediction to
+            non-technical HR stakeholders.</div>
+          <div class="project-insight"><strong>Depth:</strong> Threshold tuning for precision-recall tradeoff. SHAP
+            values per prediction. 4-page Streamlit dashboard. Explainability-first design.</div>
+        </div>
+        <div class="card-footer">
+          <span class="tech-tag">XGBoost</span><span class="tech-tag">SHAP</span><span
+            class="tech-tag">Streamlit</span><span class="tech-tag">Scikit-learn</span>
+          <a href="https://github.com/A-NarenKarthikeyan/HR-Attrition-Intelligence-System.git" target="_blank"
+            rel="noopener" class="gh-link">View on GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="project-card visible" data-cat="ai">
+        <div class="card-glow ai-glow"></div>
+        <div class="card-body">
+          <div class="project-cat-badge badge-ai">🤖 AI & ML</div>
+          <div class="project-title">AI-Powered Data Analytics Platform</div>
+          <div class="project-desc">Copilot-style analytics platform — users query data in plain English via LLM,
+            zero SQL needed.</div>
+          <div class="project-insight"><strong>Stack:</strong> OpenRouter API → LLM generates Python analysis →
+            Plotly charts returned. Full NL2Analysis pipeline differentiating from 95% of analyst portfolios.</div>
+        </div>
+        <div class="card-footer">
+          <span class="tech-tag">Python</span><span class="tech-tag">OpenRouter</span><span
+            class="tech-tag">Streamlit</span><span class="tech-tag">LLM</span><span class="tech-tag">Plotly</span>
+          <a href="https://github.com/A-NarenKarthikeyan/AI_Data_analyst.git" target="_blank" rel="noopener"
+            class="gh-link">View on GitHub ↗</a>
+        </div>
+      </div>
+
     </div>
 
   </section>
@@ -1682,6 +1737,14 @@
     document.querySelectorAll('.stat-num[data-count]').forEach(el => co.observe(el));
 
     // filter removed — all projects always visible
+    function filterProjects(cat, btn) {
+      document.querySelectorAll('.ptab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.project-card').forEach(card => {
+        const match = cat === 'all' || card.dataset.cat === cat;
+        card.classList.toggle('visible', match);
+      });
+    }
 
     // ─── NAV ACTIVE ───────────────────────────────────────────────
     const secs = document.querySelectorAll('section[id]');
